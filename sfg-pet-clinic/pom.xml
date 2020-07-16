@@ -15,6 +15,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
 		<java.version>11</java.version>
 	</properties>
 
