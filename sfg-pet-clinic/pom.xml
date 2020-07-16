@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>sfg-pet-clinic</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>sfg-pet-clinic</name>
 	<description>Pet Clinic</description>
 	<packaging>pom</packaging>
@@ -43,6 +43,6 @@
   <scm>
   <connection>scm:git:file://D:\Git\Project\sfg-pet-clinic\sfg-pet-clinic</connection>
     <developerConnection>scm:git:https://github.com/ShaniSh96/sfg-pet-clinic-mine.git</developerConnection>
-    <tag>sfg-pet-clinic-0.0.3</tag>
+    <tag>HEAD</tag>
   </scm>
 </project>
