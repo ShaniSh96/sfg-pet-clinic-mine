@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.example</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1 SNAPSHOT</version>
   </parent>
   <artifactId>pet-clinic-web</artifactId>
   <packaging>pom</packaging>
@@ -11,9 +11,9 @@
   
   <dependencies>
   <dependency>
-    <groupId>com.example</groupId>
-	<artifactId>pet-clinic-data</artifactId>
-	<version>0.0.1</version>
+  	<groupId>com.example</groupId>
+  <artifactId>pet-clinic-data</artifactId>
+  <version>0.0.1 SNAPSHPOT</version>
   </dependency>
   	<dependency>
   		<groupId>org.springframework.boot</groupId>
