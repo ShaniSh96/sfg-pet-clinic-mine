@@ -41,6 +41,7 @@
 	</modules>
 
   <scm>
+  <connection>scm:git:file://D:\Git\Project\sfg-pet-clinic\sfg-pet-clinic</connection>
     <developerConnection>scm:git:https://github.com/ShaniSh96/sfg-pet-clinic-mine.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
