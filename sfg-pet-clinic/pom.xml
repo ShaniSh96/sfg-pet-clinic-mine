@@ -40,6 +40,6 @@
 	</modules>
 
   <scm>
-    <tag>sfg-pet-clinic-0.0.1</tag>
+    <developerConnection>scm:git:https://github.com/ShaniSh96/sfg-pet-clinic-mine.git</developerConnection>
   </scm>
 </project>
