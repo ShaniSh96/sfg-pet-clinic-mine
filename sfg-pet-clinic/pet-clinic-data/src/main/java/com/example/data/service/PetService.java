@@ -1,12 +1,8 @@
 package com.example.data.service;
 
-import java.util.Set;
-
 import com.example.data.model.Pet;
 
-public interface PetService {
+public interface PetService extends CrudService<Pet, Long>{
 
-	Pet findById(Long Id);
-	Pet save(Pet pet);
-	Set<Pet> findAll();
+	
 }

@@ -4,11 +4,8 @@ import java.util.Set;
 
 import com.example.data.model.Owner;
 
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner,Long>{
 
 	Owner findByLastName(String lastName);
-	Owner findById(Long Id);
-	Owner save(Owner owner);
-	Set<Owner> findAll();
 	
 }
