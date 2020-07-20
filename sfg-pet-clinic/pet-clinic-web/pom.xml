@@ -6,8 +6,15 @@
     <version>0.0.4-SNAPSHOT</version>
   </parent>
   <artifactId>pet-clinic-web</artifactId>
-  <packaging>pom</packaging>
   <name>pet-clinic-web</name>
+  
+  <properties>
+        <!-- Web dependencies -->
+        <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
+        <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
+        <webjars-jquery.version>2.2.4</webjars-jquery.version>
+        <wro4j.version>1.8.0</wro4j.version>
+    </properties>
   
   <dependencies>
   <dependency>
@@ -15,6 +22,14 @@
   <artifactId>pet-clinic-data</artifactId>
   <version>0.0.4-SNAPSHOT</version>
   </dependency>
+  
+  		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		
   	<dependency>
   		<groupId>org.springframework.boot</groupId>
   		<artifactId>spring-boot-starter-actuator</artifactId>
@@ -29,13 +44,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
-	<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -48,4 +57,26 @@
 			</exclusions>
 		</dependency>	
   </dependencies>
+  <build>
+  	<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			
+			<executions>
+				
+				<execution>
+				<goals>
+					<goal>repackage</goal>
+				</goals>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+				</execution>
+			</executions>
+			</plugin>
+			
+			
+		</plugins>
+  </build>
 </project>
