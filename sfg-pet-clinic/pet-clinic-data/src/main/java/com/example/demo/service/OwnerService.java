@@ -1,8 +1,8 @@
-package com.example.data.service;
+package com.example.demo.service;
 
 import java.util.Set;
 
-import com.example.data.model.Owner;
+import com.example.demo.model.Owner;
 
 public interface OwnerService extends CrudService<Owner,Long>{
 

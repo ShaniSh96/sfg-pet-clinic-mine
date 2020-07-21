@@ -3,12 +3,12 @@ package com.example.demo.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.example.data.model.Owner;
-import com.example.data.model.Vet;
-import com.example.data.service.OwnerService;
-import com.example.data.service.VetService;
-import com.example.data.service.map.OwnerMapService;
-import com.example.data.service.map.VetMapService;
+import com.example.demo.model.Owner;
+import com.example.demo.model.Vet;
+import com.example.demo.service.OwnerService;
+import com.example.demo.service.VetService;
+import com.example.demo.service.map.OwnerMapService;
+import com.example.demo.service.map.VetMapService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -17,9 +17,9 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	
 	
-	public DataLoader() {
-		ownerService = new OwnerMapService();
-		vetService = new VetMapService();
+	public DataLoader(OwnerService ownerService,VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 	
 	@Override

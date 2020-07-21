@@ -1,6 +1,6 @@
-package com.example.data.service;
+package com.example.demo.service;
 
-import com.example.data.model.Pet;
+import com.example.demo.model.Pet;
 
 public interface PetService extends CrudService<Pet, Long>{
 
