@@ -3,9 +3,9 @@ package com.example.data.service.map;
 import java.util.Set;
 
 import com.example.data.model.Owner;
-import com.example.data.service.CrudService;
+import com.example.data.service.OwnerService;
 
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long>{
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
 
 	@Override
 	public Owner save(Owner object) {
@@ -31,6 +31,12 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return this.findByLastName(lastName);
 	}
 	
 
