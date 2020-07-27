@@ -2,6 +2,8 @@ package com.example.demo.service.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.example.demo.model.PetType;
 import com.example.demo.service.PetTypeService;
 
