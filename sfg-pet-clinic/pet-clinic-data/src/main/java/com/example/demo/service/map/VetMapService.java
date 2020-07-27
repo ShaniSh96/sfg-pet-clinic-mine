@@ -4,15 +4,29 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.Speciality;
 import com.example.demo.model.Vet;
+import com.example.demo.service.SpecialtiesService;
 import com.example.demo.service.VetService;
 
 @Service
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService{
 
-	@Override
+	private final SpecialtiesService specialtyService;
+	
+	public VetMapService(SpecialtiesService specialtyService) {
+		this.specialtyService = specialtyService;
+	}
+@Override
 	public Vet save(Vet object) {
-		// TODO Auto-generated method stub
+		if(object.getSpecialties().size() > 0) {
+			object.getSpecialties().forEach(specialty ->{
+				if(specialty.getId() == null) {
+					Speciality savedSpecialty = specialtyService.save(specialty);
+					specialty.setId(savedSpecialty.getId());
+				}
+			});
+		}
 		return super.save(object);
 	}
 	
