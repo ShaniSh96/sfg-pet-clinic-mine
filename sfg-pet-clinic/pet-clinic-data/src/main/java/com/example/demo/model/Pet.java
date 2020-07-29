@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "pets")
 public class Pet extends BaseEntity{
 
 	@Column(name = "name")
@@ -31,7 +31,7 @@ public class Pet extends BaseEntity{
 	private LocalDate birthday;
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
-	private Set<Visit> visit = new HashSet<>();
+	private Set<Visit> visits = new HashSet<>();
 	
 	public String getName() {
 		return name;
@@ -58,10 +58,10 @@ public class Pet extends BaseEntity{
 		this.birthday = birthday;
 	}
 	public Set<Visit> getVisit() {
-		return visit;
+		return visits;
 	}
-	public void setVisit(Set<Visit> visit) {
-		this.visit = visit;
+	public void setVisit(Set<Visit> visits) {
+		this.visits = visits;
 	}
 	
 	
