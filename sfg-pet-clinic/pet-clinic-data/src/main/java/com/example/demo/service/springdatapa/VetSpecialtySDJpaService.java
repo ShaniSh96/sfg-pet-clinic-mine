@@ -29,7 +29,7 @@ public class VetSpecialtySDJpaService implements SpecialtiesService{
 
 	@Override
 	public Speciality findById(Long id) {
-		return specialtyRepo.findById(id);
+		return specialtyRepo.findById(id).orElse(null);
 	}
 
 	@Override

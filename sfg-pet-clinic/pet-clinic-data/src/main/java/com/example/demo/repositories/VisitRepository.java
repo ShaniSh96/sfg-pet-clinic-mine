@@ -1,8 +1,9 @@
 package com.example.demo.repositories;
 
-import com.example.demo.model.Visit;
-import com.example.demo.service.CrudService;
+import org.springframework.data.repository.CrudRepository;
 
-public interface VisitRepository extends CrudService<Visit, Long>{
+import com.example.demo.model.Visit;
+
+public interface VisitRepository extends CrudRepository	<Visit, Long>{
 
 }

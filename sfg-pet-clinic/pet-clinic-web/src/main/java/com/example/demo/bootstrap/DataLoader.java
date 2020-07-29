@@ -44,27 +44,8 @@ public class DataLoader implements CommandLineRunner {
 	}
 
 	private void loadData() {
-		Owner owner1 = new Owner();
-		owner1.setFirstName("Bill");
-		owner1.setLastName("Murray");
-		owner1.setAddress("asd sdfghj");
-		owner1.setCity("AHM");
-		owner1.setTelephone("12345");
 		
-		ownerService.save(owner1);
-		
-		Owner owner2 = new Owner();
-		owner2.setFirstName("Mark");
-		owner2.setLastName("Benith");
-		owner2.setAddress("sdf dghjk");
-		owner2.setCity("BVN");
-		owner2.setTelephone("963852");
-		
-		ownerService.save(owner2);
-		
-		System.out.println("Loaded Owners...");
-		
-		
+
 		PetType dog = new PetType();
 		dog.setName("Jim");
 		PetType saveDogPetType = petTypeService.save(dog);
@@ -74,6 +55,7 @@ public class DataLoader implements CommandLineRunner {
 		cat.setName("Ruskel");
 		PetType saveCatPetType = petTypeService.save(cat);
 		
+
 		
 		Speciality radiology = new Speciality();
 		radiology.setDescription("I am a Radiologist.");
@@ -88,6 +70,15 @@ public class DataLoader implements CommandLineRunner {
 		Speciality savedChemst = specialtyService.save(chemist);
 		
 		
+			
+		Owner owner1 = new Owner();
+		owner1.setFirstName("Bill");
+		owner1.setLastName("Murray");
+		owner1.setAddress("asd sdfghj");
+		owner1.setCity("AHM");
+		owner1.setTelephone("12345");
+		
+
 		
 		Pet pet1 = new Pet();
 		pet1.setPettype(saveDogPetType);
@@ -95,7 +86,17 @@ public class DataLoader implements CommandLineRunner {
 		pet1.setBirthday(LocalDate.now());
 		pet1.setName("Mikey");
 		owner1.getPets().add(pet1);
+		
 		ownerService.save(owner1);
+		
+		Owner owner2 = new Owner();
+		owner2.setFirstName("Mark");
+		owner2.setLastName("Benith");
+		owner2.setAddress("sdf dghjk");
+		owner2.setCity("BVN");
+		owner2.setTelephone("963852");
+		
+
 		
 		Pet pet2 = new Pet();
 		pet2.setPettype(saveCatPetType);
@@ -105,6 +106,10 @@ public class DataLoader implements CommandLineRunner {
 		owner2.getPets().add(pet2);
 		ownerService.save(owner2);
 
+		ownerService.save(owner2);
+		
+		System.out.println("Loaded Owners...");
+		
 
 		Visit catVisit = new Visit();
 		catVisit.setPet(pet2);

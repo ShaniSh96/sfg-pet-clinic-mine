@@ -3,10 +3,15 @@ package com.example.demo.service.springdatapa;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
+
 import com.example.demo.model.PetType;
 import com.example.demo.repositories.PetTypeRepository;
 import com.example.demo.service.PetTypeService;
 
+@Service
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService{
 
 	private final PetTypeRepository petTypeRepo;
@@ -25,7 +30,7 @@ public class PetTypeSDJpaService implements PetTypeService{
 
 	@Override
 	public PetType findById(Long id) {
-		return petTypeRepo.findById(id);
+		return petTypeRepo.findById(id).orElse(null);
 	}
 
 	@Override

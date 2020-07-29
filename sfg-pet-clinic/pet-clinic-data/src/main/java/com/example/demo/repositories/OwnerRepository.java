@@ -1,9 +1,9 @@
 package com.example.demo.repositories;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.example.demo.model.Owner;
-import com.example.demo.service.CrudService;
 
-public interface OwnerRepository extends CrudService<Owner, Long>{
-
+public interface OwnerRepository extends CrudRepository<Owner, Long>{
 	Owner findByLastName(String lastName);
 }

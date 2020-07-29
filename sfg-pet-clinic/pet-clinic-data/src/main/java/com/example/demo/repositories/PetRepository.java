@@ -1,8 +1,9 @@
 package com.example.demo.repositories;
 
-import com.example.demo.model.Pet;
-import com.example.demo.service.CrudService;
+import org.springframework.data.repository.CrudRepository;
 
-public interface PetRepository extends CrudService<Pet, Long> {
+import com.example.demo.model.Pet;
+
+public interface PetRepository extends CrudRepository<Pet, Long> {
 
 }

@@ -1,8 +1,9 @@
 package com.example.demo.repositories;
 
-import com.example.demo.model.Speciality;
-import com.example.demo.service.CrudService;
+import org.springframework.data.repository.CrudRepository;
 
-public interface SpecialtyRepository extends CrudService<Speciality, Long>{
+import com.example.demo.model.Speciality;
+
+public interface SpecialtyRepository extends CrudRepository<Speciality, Long>{
 
 }
