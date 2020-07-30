@@ -12,6 +12,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data
+@EqualsAndHashCode(exclude = {"visits"})
+@NoArgsConstructor
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
@@ -33,36 +40,6 @@ public class Pet extends BaseEntity{
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
 	private Set<Visit> visits = new HashSet<>();
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public PetType getPettype() {
-		return pettype;
-	}
-	public void setPettype(PetType pettype) {
-		this.pettype = pettype;
-	}
-	public Owner getOwner() {
-		return owner;
-	}
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
-	}
-	public Set<Visit> getVisit() {
-		return visits;
-	}
-	public void setVisit(Set<Visit> visits) {
-		this.visits = visits;
-	}
 	
 	
 }

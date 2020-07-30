@@ -11,6 +11,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data
+@EqualsAndHashCode(exclude = "specialties")
+@NoArgsConstructor
 @Entity
 @Table(name = "vets")
 public class Vet extends Person{
@@ -20,13 +27,5 @@ public class Vet extends Person{
 		inverseJoinColumns = @JoinColumn(name = "specialty_id"))
 	private Set<Speciality>  specialties = new HashSet<>();
 
-	public Set<Speciality> getSpecialties() {
-		return specialties;
-	}
-
-	public void setSpecialties(Set<Speciality> specialties) {
-		this.specialties = specialties;
-	}
-	
 	
 }

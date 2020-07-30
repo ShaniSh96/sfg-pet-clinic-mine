@@ -9,6 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data
+@EqualsAndHashCode(exclude = {"pets"})
+@NoArgsConstructor
 @Entity
 @Table(name = "owners")
 public class Owner extends Person{
@@ -25,30 +32,4 @@ public class Owner extends Person{
 
 	@Column(name = "city")
 	private String city;
-	public Set<Pet> getPets() {
-		return pets;
-	}
-	public void setPets(Set<Pet> pets) {
-		this.pets = pets;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getTelephone() {
-		return telephone;
-	}
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	
-	
 }
