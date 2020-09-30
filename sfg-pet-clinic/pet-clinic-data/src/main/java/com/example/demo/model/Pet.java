@@ -14,9 +14,12 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"visits"})
 @NoArgsConstructor
 @Entity
@@ -39,6 +42,15 @@ public class Pet extends BaseEntity{
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
 	private Set<Visit> visits = new HashSet<>();
+
+	public Pet(String name, PetType pettype, Owner owner, LocalDate birthday, Set<Visit> visits) {
+		this.name = name;
+		this.pettype = pettype;
+		this.owner = owner;
+		this.birthday = birthday;
+		if(visits != null || visits.size() > 0)
+			this.visits = visits;
+	}
 	
 	
 	
