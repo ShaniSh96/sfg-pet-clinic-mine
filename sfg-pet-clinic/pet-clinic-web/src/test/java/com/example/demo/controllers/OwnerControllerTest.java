@@ -79,7 +79,10 @@ class OwnerControllerTest {
 	void findOwners() throws Exception {
 		mvc.perform(get("/owners/find"))
 			.andExpect(status().isOk())
-			.andExpect(view().name("notImplemented"));
+			.andExpect(view().name("owners/findOwners"))
+			.andExpect(model().attributeExists("owner"));
+		
+		verifyZeroInteractions(ownerService);
 	}
 	
 	@Test

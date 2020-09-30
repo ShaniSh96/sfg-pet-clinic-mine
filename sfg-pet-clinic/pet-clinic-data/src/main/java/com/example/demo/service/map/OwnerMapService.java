@@ -1,13 +1,14 @@
 package com.example.demo.service.map;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Owner;
 import com.example.demo.model.Pet;
-import com.example.demo.model.PetType;
 import com.example.demo.service.OwnerService;
 import com.example.demo.service.PetService;
 import com.example.demo.service.PetTypeService;
@@ -79,6 +80,15 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 				.filter(owner -> owner.getLastName().equals(lastName))
 				.findFirst()
 				.orElse(null);
+	}
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String name) {
+		
+		return this.findAll()
+				.stream()
+				.filter(owner -> owner.getLastName().contains(name))
+				.collect(Collectors.toList());
 	}
 	
 
