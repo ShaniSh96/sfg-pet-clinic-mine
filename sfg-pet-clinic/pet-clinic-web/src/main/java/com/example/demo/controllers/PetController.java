@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import java.beans.PropertyEditorSupport;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,9 +49,19 @@ public class PetController {
 		return ownerService.findById(ownerId);
 	}
 	
-	@InitBinder("owner")
+	@InitBinder
 	public void initOwnerBinder(WebDataBinder binder) {
 		binder.setDisallowedFields("id");
+		
+		binder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+
+			@Override
+			public void setAsText(String text) throws IllegalArgumentException {
+				
+				setValue(LocalDate.parse(text));
+			}
+			
+		});
 	}
 	
 	@GetMapping("/pets/new")
